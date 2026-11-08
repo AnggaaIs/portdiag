@@ -1,0 +1,42 @@
+{
+  "name": "portdiag",
+  "version": "0.1.0",
+  "description": "Diagnose why a local TCP port cannot be bound",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnggaaIs/portdiag.git"
+  },
+  "homepage": "https://github.com/AnggaaIs/portdiag#readme",
+  "bugs": {
+    "url": "https://github.com/AnggaaIs/portdiag/issues"
+  },
+  "keywords": [
+    "port",
+    "tcp",
+    "diagnostic",
+    "bind",
+    "windows"
+  ],
+  "type": "module",
+  "bin": {
+    "portdiag": "bin/portdiag.js"
+  },
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "README.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "license": "MIT"
+}

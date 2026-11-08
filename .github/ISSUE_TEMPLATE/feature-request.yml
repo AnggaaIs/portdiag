@@ -1,0 +1,27 @@
+name: Feature request
+description: Suggest a focused improvement to portdiag
+body:
+  - type: markdown
+    attributes:
+      value: Please describe the problem first. Portdiag aims to stay small and read-only.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem are you running into?
+      placeholder: I need to understand why ...
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: What would you like portdiag to do?
+      description: A small example or command is helpful.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives or trade-offs
+      description: What do you use today? Are there risks or limitations to consider?
+    validations:
+      required: false

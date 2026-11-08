@@ -1,0 +1,58 @@
+name: Bug report
+description: Report a reproducible problem with portdiag
+body:
+  - type: markdown
+    attributes:
+      value: Please search existing issues first. Don't include secrets or private network details.
+  - type: input
+    id: version
+    attributes:
+      label: portdiag version
+      description: Run `portdiag --version`.
+      placeholder: 0.1.0
+    validations:
+      required: true
+  - type: input
+    id: node
+    attributes:
+      label: Node.js version
+      description: Run `node --version`.
+      placeholder: v22.x
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How can we reproduce it?
+      description: Include the command and the smallest set of steps that show the problem.
+      placeholder: |
+        1. Start a TCP listener on ...
+        2. Run `portdiag ...`
+        3. Observe ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual result
+      description: Paste relevant output. For `--json`, remove sensitive details first.
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Add context that might help reproduce or understand the issue.
+    validations:
+      required: false
