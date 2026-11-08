@@ -37,5 +37,5 @@ test('rejects invalid hosts with exit code 2', () => {
 
 test('supports help and version', () => {
   assert.equal(run('--help').status, 0);
-  assert.match(run('--version').stdout, /^0\.1\.0/);
+  assert.match(run('--version').stdout, /^0\.1\.1/);
 });

@@ -64,7 +64,7 @@ git push origin v0.1.1
 
 The publish workflow checks that the tag matches `package.json`, verifies its commit is on `main`, reruns tests, checks the npm package contents, and publishes. Do not publish by pushing an unreviewed change or a tag from a feature branch.
 
-The npm package must have GitHub Actions configured as a Trusted Publisher for user `AnggaaIs`, repository `portdiag`, and workflow `publish.yml`. This uses OIDC, so no long-lived npm token belongs in GitHub secrets. The first npm publication must be completed manually with npm account authentication; configure the package's Trusted Publisher after that first publication.
+The npm package uses GitHub Actions as a Trusted Publisher for user `AnggaaIs`, repository `portdiag`, and workflow `publish.yml`. It grants the workflow permission to publish with OIDC, so no long-lived npm token belongs in GitHub secrets. npm may show the publisher as pending validation until its first successful tag-based publish.
 
 ## Scope
 
