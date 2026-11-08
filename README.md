@@ -17,7 +17,7 @@ Next: Check the listening process before deciding whether to stop it.
 
 ## Try it
 
-Once published, run it without installing:
+Run it without installing:
 
 ```sh
 npx portdiag 3000

@@ -1,6 +1,6 @@
 {
   "name": "portdiag",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Diagnose why a local TCP port cannot be bound",
   "repository": {
     "type": "git",
