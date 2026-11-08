@@ -2,6 +2,8 @@
 
 <!-- Briefly describe the user-visible change and why it is needed. -->
 
+<!-- PR title must use Conventional Commits, for example: fix(windows): detect active listeners -->
+
 ## Checks
 
 - [ ] `npm test` passes

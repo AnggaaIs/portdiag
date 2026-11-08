@@ -10,12 +10,44 @@ Search existing issues first. For a bug, include the portdiag and Node.js versio
 
 Discuss larger behavior changes in an issue first. Keep pull requests focused, explain the user-visible reason for the change, and add or update tests for behavior changes.
 
+### Branch names
+
+Use a short type and kebab-case summary. CI rejects pull requests with an unstructured branch name. Fork contributors may prefix the type with their username:
+
+- `feat/json-output`
+- `fix/windows-listener-detection`
+- `docs/contributing-guide`
+- `test/cli-output`
+- `AnggaaIs/fix/windows-listener-detection`
+
+### Commit messages
+
+Every commit and pull request title must follow Conventional Commits. The check runs in CI and blocks merging when a message does not match.
+
+```text
+type(scope): lowercase summary
+```
+
+Allowed types are `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`, and `revert`. Scope is optional. Keep the full first line to 72 characters or fewer. Use `!` before the colon for a breaking change.
+
+Good examples:
+
+```text
+feat(cli): add json output
+fix(windows): detect active listeners
+docs: clarify supported platforms
+```
+
+Messages such as `update stuff`, `fix: Fix bug`, or `misc changes` fail CI. Squash merge is the only merge method, and the PR title becomes the resulting commit message, so keep both commits and PR title in this format.
+
 Run these checks from the project directory:
 
 ```sh
 npm test
 npm pack --dry-run
 ```
+
+The Conventional Commit check can also be run by CI on pull requests. To check a title locally, use the same format and length rules above.
 
 There are no runtime dependencies. Please don't add one for work the Node.js standard library can handle, and don't publish a package release from a pull request.
 

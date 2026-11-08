@@ -1,6 +1,8 @@
-# portdiag
+# portdiag: TCP Port Diagnostics for Node.js
 
-Ever started a dev server and got an `EADDRINUSE` or “port already in use” error? `portdiag` checks a specific local TCP port and tells you what it can find, without killing anything or changing your network settings.
+[![Tests](https://github.com/AnggaaIs/portdiag/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/AnggaaIs/portdiag/actions/workflows/test.yml)
+
+Ever started a Node.js dev server and got an `EADDRINUSE` or “port already in use” error? `portdiag` checks a specific local TCP/IPv4 port and tells you what it can find, without killing anything or changing your network settings. It works on Windows, macOS, and Linux.
 
 ```console
 $ npx portdiag 3000
@@ -93,7 +95,7 @@ npm test
 npm pack --dry-run
 ```
 
-The test suite uses Node’s built-in test runner; GitHub Actions runs it on Windows, macOS, and Linux. Bug and feature forms are in `.github/ISSUE_TEMPLATE/`; see [CONTRIBUTING.md](CONTRIBUTING.md) before sending a pull request and [SECURITY.md](SECURITY.md) to report a vulnerability privately. Before publishing, run both commands above, confirm the npm name is still available, and update the package version. Publish from an authenticated npm account with:
+The test suite uses Node’s built-in test runner; GitHub Actions runs it on Windows, macOS, and Linux. Pull requests must use [Conventional Commits](CONTRIBUTING.md#commit-messages); CI checks every commit and the PR title. Bug and feature forms are in `.github/ISSUE_TEMPLATE/`. See [CONTRIBUTING.md](CONTRIBUTING.md) before sending a pull request and [SECURITY.md](SECURITY.md) to report a vulnerability privately. Before publishing, run both commands above, confirm the npm name is still available, and update the package version. Publish from an authenticated npm account with:
 
 ```sh
 npm publish --access public
