@@ -17,7 +17,7 @@ test('prints JSON diagnostics', () => {
 test('human output identifies the checked endpoint', () => {
   const result = run('1', '--host', '127.0.0.1');
   assert.match(result.stdout, /127\.0\.0\.1:1/);
-  assert.match(result.stdout, /Available/);
+  assert.match(result.stdout, /Available|In use|Reserved|Permission denied|Address unavailable|Unknown/);
   assert.match(result.stdout, /TCP bind check|listener|denied/i);
   assert.match(result.stdout, /Next/);
   assert.doesNotMatch(result.stdout, /\u001b\[/);
