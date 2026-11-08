@@ -27,6 +27,10 @@ npx portdiag 3000 --json
 
 Or install it with `npm install --global portdiag` and use `portdiag` directly. The default address is `127.0.0.1`; `--host` takes an IPv4 address. Use `portdiag --help` for the full command list.
 
+![Animated terminal demo of portdiag](demos/portdiag.gif)
+
+The demo shows an available port, a port in use, and JSON output. [Download the 1080p MP4](demos/portdiag.mp4), or regenerate both formats from [the VHS tape](demos/portdiag.tape) with [VHS](https://github.com/charmbracelet/vhs).
+
 The color in the terminal is just there to help status stand out. Piped output stays plain, and setting `NO_COLOR` disables color too.
 
 ## What it checks
