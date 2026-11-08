@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { isConventionalCommit, isStructuredBranch } from '../scripts/check-commit-messages.js';
+import { releaseTagMatches } from '../scripts/check-release-tag.js';
 
 test('accepts conventional commit headers', () => {
   for (const message of [
@@ -27,4 +28,10 @@ test('accepts structured branch names and rejects unstructured names', () => {
   for (const branch of ['main', 'my-changes', 'fix/no_underscores', 'fix/Uppercase']) {
     assert.equal(isStructuredBranch(branch), false, branch);
   }
+});
+
+test('release tag must exactly match the package version', () => {
+  assert.equal(releaseTagMatches('0.1.1', 'v0.1.1'), true);
+  assert.equal(releaseTagMatches('0.1.1', '0.1.1'), false);
+  assert.equal(releaseTagMatches('0.1.1', 'v0.1.2'), false);
 });
