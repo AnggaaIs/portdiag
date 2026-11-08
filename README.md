@@ -95,7 +95,7 @@ npm test
 npm pack --dry-run
 ```
 
-The test suite uses Node’s built-in test runner; GitHub Actions runs it on Windows, macOS, and Linux. Pull requests must use [Conventional Commits](CONTRIBUTING.md#commit-messages); CI checks every commit and the PR title. Bug and feature forms are in `.github/ISSUE_TEMPLATE/`. See [CONTRIBUTING.md](CONTRIBUTING.md) before sending a pull request and [SECURITY.md](SECURITY.md) to report a vulnerability privately. Before publishing, run both commands above, confirm the npm name is still available, and update the package version. Publish from an authenticated npm account with:
+The test suite uses Node’s built-in test runner; GitHub Actions runs it on Windows, macOS, and Linux. Pull requests must use [Conventional Commits](CONTRIBUTING.md#commit-messages); CI checks every commit and the PR title. Bug and feature forms are in `.github/ISSUE_TEMPLATE/`. See [CONTRIBUTING.md](CONTRIBUTING.md) before sending a pull request and [SECURITY.md](SECURITY.md) to report a vulnerability privately. Releases are published to npm from version tags after the version bump is merged into `main`. See [CONTRIBUTING.md](CONTRIBUTING.md#releasing) for release steps and npm Trusted Publisher setup.
 
 ```sh
 npm publish --access public

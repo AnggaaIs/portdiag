@@ -51,6 +51,21 @@ The Conventional Commit check can also be run by CI on pull requests. To check a
 
 There are no runtime dependencies. Please don't add one for work the Node.js standard library can handle, and don't publish a package release from a pull request.
 
+## Releasing
+
+Releases are published to npm when a version tag is pushed. First update `version` in `package.json` through a pull request, using a Conventional Commit such as `chore(release): bump version to 0.1.1`. After it is merged and CI passes, create and push the matching tag from `main`:
+
+```sh
+git switch main
+git pull --ff-only
+git tag v0.1.1
+git push origin v0.1.1
+```
+
+The publish workflow checks that the tag matches `package.json`, verifies its commit is on `main`, reruns tests, checks the npm package contents, and publishes. Do not publish by pushing an unreviewed change or a tag from a feature branch.
+
+The npm package must have GitHub Actions configured as a Trusted Publisher for user `AnggaaIs`, repository `portdiag`, and workflow `publish.yml`. This uses OIDC, so no long-lived npm token belongs in GitHub secrets. The first npm publication must be completed manually with npm account authentication; configure the package's Trusted Publisher after that first publication.
+
 ## Scope
 
 The project currently supports TCP over IPv4 on Windows, macOS, and Linux. It is read-only apart from the temporary TCP bind probe. Process termination, UDP, IPv6, scanning, and configuration systems are out of scope.
