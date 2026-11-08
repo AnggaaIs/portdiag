@@ -14,8 +14,12 @@
     "port",
     "tcp",
     "diagnostic",
+    "port-diagnostics",
+    "port-checker",
     "bind",
-    "windows"
+    "windows",
+    "networking",
+    "developer-tools"
   ],
   "type": "module",
   "bin": {
